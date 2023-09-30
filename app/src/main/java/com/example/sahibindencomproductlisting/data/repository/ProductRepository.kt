@@ -7,4 +7,6 @@ class ProductRepository {
     var productDataStorage = ProductDataStorage()
 
     suspend fun addProductsToList() : List<Product> = productDataStorage.addProductsToList()
+
+    suspend fun productListSize() : String = productDataStorage.productListSize()
 }

@@ -43,7 +43,7 @@
                 app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textViewSearchResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -51,21 +51,21 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintBottom_toTopOf="@+id/textViewResultNumber"
                 app:layout_constraintStart_toEndOf="@+id/menuButton"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewResultNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="25346 sonuç bulundu"
+                android:text="7 sonuç bulundu"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/toolbar"
                 app:layout_constraintStart_toEndOf="@+id/menuButton"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/textViewSearchResult" />
 
             <ImageButton
                 android:id="@+id/imageButton4"
@@ -115,11 +115,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:backgroundTint="@android:color/white"
+        android:backgroundTint="@color/toggleButtonsColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
         app:singleSelection="true">
+
 
         <Button
             android:id="@+id/buttonFilter"
@@ -129,42 +130,70 @@
             android:layout_weight="1"
             android:includeFontPadding="false"
             android:text="Filtrele"
-            android:textSize="12sp" />
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/toggleButtonsColor"
+            android:textColorHint="@color/toggleButtonsColor"
+            android:textSize="9sp"
+            app:strokeColor="@color/white" />
+
 
         <Button
             android:id="@+id/buttonSort"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Sırala"
-            android:textSize="12sp" />
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/toggleButtonsColor"
+            android:textColorHint="@color/toggleButtonsColor"
+            android:textSize="9sp"
+            app:strokeColor="@color/white" />
 
         <Button
             android:id="@+id/buttonView"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Görünüm"
-            android:textSize="12sp" />
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/toggleButtonsColor"
+            android:textColorHint="@color/toggleButtonsColor"
+            android:textSize="9sp"
+            app:strokeColor="@color/white" />
 
         <Button
             android:id="@+id/buttonSaveSearch"
+            android:maxLines="2"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Aramayı Kaydet"
-            android:textSize="12sp" />
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/toggleButtonsColor"
+            android:textColorHint="@color/toggleButtonsColor"
+            android:textSize="9sp"
+            app:strokeColor="@color/white" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="?attr/dividerHorizontal"
+        app:layout_constraintBottom_toTopOf="@+id/productsRv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/productsRv" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productsRv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
