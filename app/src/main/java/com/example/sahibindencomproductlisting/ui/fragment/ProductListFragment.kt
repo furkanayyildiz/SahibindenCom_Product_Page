@@ -31,6 +31,8 @@ class ProductListFragment : Fragment() {
         viewModel.productList.observe(viewLifecycleOwner){
             val productAdapter = ProductAdapter(requireContext(),it ,viewModel)
             binding.productsRv.adapter = productAdapter
+            var productNumber = it.size.toString()
+            binding.textViewResultNumber.text = "$productNumber sonuç bulundu"
         }
         return binding.root
     }
