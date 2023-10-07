@@ -24,9 +24,7 @@ class ProductListFragment : Fragment() {
 
         binding.productsRv.layoutManager = LinearLayoutManager(requireContext())
 
-        /*viewModel.productListSize.observe(this){
-            binding.textViewResultNumber.text = "$it sonuc bulundu"
-        }*/
+
 
         viewModel.productList.observe(viewLifecycleOwner){
             val productAdapter = ProductAdapter(requireContext(),it ,viewModel)

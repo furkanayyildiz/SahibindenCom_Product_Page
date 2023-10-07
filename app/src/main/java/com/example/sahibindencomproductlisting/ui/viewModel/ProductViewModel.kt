@@ -13,10 +13,10 @@ import kotlinx.coroutines.launch
 class ProductViewModel : ViewModel() {
     var productRepository = ProductRepository()
     var productList = MutableLiveData<List<Product>>()
-    var productListSize = MutableLiveData("0")
+
     init {
         addProductsToList()
-        productListSize()
+
     }
     fun addProductsToList() {
         CoroutineScope(Dispatchers.Main).launch {
@@ -24,10 +24,5 @@ class ProductViewModel : ViewModel() {
 
         }
     }
-    fun productListSize() {
-        CoroutineScope(Dispatchers.Main).launch {
-            productListSize.value = productRepository.productListSize()
 
-        }
-    }
 }

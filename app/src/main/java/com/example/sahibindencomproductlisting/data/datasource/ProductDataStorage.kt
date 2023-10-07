@@ -28,8 +28,5 @@ class ProductDataStorage {
 
         return@withContext productList
     }
-    suspend fun productListSize() : String = withContext(Dispatchers.IO) {
-         listSize =  productList.size.toString()
-        return@withContext listSize
-    }
+
 }
